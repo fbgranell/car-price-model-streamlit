@@ -25,7 +25,7 @@ valid_brands = ['BMW',  'Peugeot',  'Audi',  'Volkswagen',  'Seat',  'Mercedes',
     'Jeep',  'Ds',  'Mitsubishi',  'Honda',  'Jaguar',  'Αlfa',  'Suzuki',  'Abarth',  'Smart',  'Cupra',  'Infiniti',
       'Porsche',  'Lexus',  'Subaru',  'Chevrolet',  'Maserati',  'Ssangyong',  'Lancia',  'Cadillac',  'Saab',
         'Chrysler',  'Dodge',  'Other',  'Aston',  'Bentley',  'Ferrari']
-valid_types = ['Standard','Sport','4x4 (4WD)','Commercial Van']
+valid_types = ['Standard','Sport','4x4','Commercial Van']
 valid_locations = ['Barcelona',  'Madrid',  'Valencia',  'Sevilla',  'Malaga',  'Vizcaya',  'Castellon',  'Zaragoza',
   'Murcia',  'Navarra',  'Ciudad Real',  'Cantabria',  'Cordoba',  'Ourense',  'Toledo',  'Pontevedra',  'Girona', 
    'Coruña',  'Tarragona',  'Alicante',  'Badajoz',  'Granada',  'Almeria',  'Guipuzcoa',  'Jaen',  'Huelva',  'Alava',
@@ -64,7 +64,8 @@ model = pd.read_pickle('./machine-learning/xgboost.p')
 
 col1, col2, col3 = st.columns([1,1,1])
 if col2.button("Get Your Prediction"):
-    
+    if t_type == 'Commercial Van':
+      t_type = 'Commercial'
     x = pd.DataFrame({'year':[t_age],
                      'cv':[t_cv],
                      'km':[t_km],
