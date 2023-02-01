@@ -14,7 +14,7 @@ import numpy as np
 
 
 st.image('./images/header.png')
-st.markdown("<h1 style='text-align: center;'>Predicting used car prices</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Predictor of used car prices</h1>", unsafe_allow_html=True)
 
 # List of acceptable values
 valid_fuels = ['Gasoline','Diesel','Hybrid']
