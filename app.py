@@ -17,7 +17,7 @@ st.image('./images/header.png')
 st.markdown("<h1 style='text-align: center;'>Predicting used car prices</h1>", unsafe_allow_html=True)
 
 # List of acceptable values
-valid_fuels = ['Gasoline','Diesel']
+valid_fuels = ['Gasoline','Diesel','Hybrid']
 valid_gearbox = ['Manual','Automatic']
 valid_colors = ['White','Gray','Black','Blue','Red','Silver','Brown','Beige','Orange','Yellow','Other']
 valid_brands = ['BMW',  'Peugeot',  'Audi',  'Volkswagen',  'Seat',  'Mercedes',  'Citroen',  'Opel',  'Renault',
