@@ -12,6 +12,10 @@ import pandas as pd
 import numpy as np
 # User module files
 
+@st.cache(allow_output_mutation=True,ttl=24*3600)
+def load_pickles():
+  return pd.read_pickle('./machine-learning/normalizer.p'), pd.read_pickle('./machine-learning/encoder.p'), pd.read_pickle('./machine-learning/xgboost.p')
+
 
 st.image('./images/header.png')
 st.markdown("<h1 style='text-align: center;'>Predictor of used car prices</h1>", unsafe_allow_html=True)
@@ -58,9 +62,7 @@ t_width = st.number_input("Please enter the width of the car in cm: ",format='%i
 
 t_cmixto = st.number_input("Please enter the mixed fuel consumption of the car in L/km: ",format='%.1f',step=0.1, min_value=0.6, max_value=21.0, value = 5.0)
 
-normalizer = pd.read_pickle('./machine-learning/normalizer.p')
-encoder = pd.read_pickle('./machine-learning/encoder.p')
-model = pd.read_pickle('./machine-learning/xgboost.p')
+normalizer,encoder,model = load_pickles()
 
 col1, col2, col3 = st.columns([1,1,1])
 if col2.button("Get Your Prediction"):
