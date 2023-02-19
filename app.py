@@ -17,7 +17,7 @@ def load_pickles():
   return pd.read_pickle('./machine-learning/normalizer.p'), pd.read_pickle('./machine-learning/encoder.p'), pd.read_pickle('./machine-learning/xgboost.p')
 
 
-st.image('./images/header.png')
+st.image('./images/header1.png')
 st.markdown("<h1 style='text-align: center;'>Predictor of used car prices</h1>", unsafe_allow_html=True)
 
 # List of acceptable values
