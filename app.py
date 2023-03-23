@@ -94,7 +94,7 @@ if col2.button("Get Your Prediction"):
     x_scaled = pd.concat([x_norm,x_oh],axis=1)
     prediction = model.predict(x_scaled)
 
-    st.success(f"The model predicted a price of {prediction[0]:.0f}€ for the specified car.")
+    st.success(f"The model predicted a price of {prediction[0]:.0f}€ for the car you specified.")
     
     # Tengo que rehacer los pickles con las categorias igual en un lado y en otro,
     # y tambien no tener la id en el transformer del pickle. Después de todo 
