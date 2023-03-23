@@ -11,8 +11,8 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 # User module files
-
-@st.cache(allow_output_mutation=True,ttl=24*3600)
+#@st.cache_data(allow_output_mutation=True,ttl=24*3600)
+@st.cache_data(ttl=24*3600)
 def load_pickles():
   return pd.read_pickle('./machine-learning/normalizer.p'), pd.read_pickle('./machine-learning/encoder.p'), pd.read_pickle('./machine-learning/xgboost.p')
 
